@@ -56,7 +56,7 @@ namespace ContosoUniversity.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+           [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DepartmentID,Name,Budget,StartDate,InstructorID,RowVersion")] Department department)
         {
             if (ModelState.IsValid)
@@ -130,7 +130,7 @@ namespace ContosoUniversity.Controllers
                     var databaseEntry = exceptionEntry.GetDatabaseValues();
                     if (databaseEntry == null)
                     {
-                        ModelState.AddModelError(string.Empty, "Another user deleted.")
+                        ModelState.AddModelError(string.Empty, "Another user deleted.");
                     }
                     else
                     {

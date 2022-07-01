@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace ContosoUniversity.Models
 {
-    public class Instructor
+    public class Instructor : Person
     {
         public int ID { get; set; }
 
-        [Required]
-        [Display(Name = "Last Name")]
-        [StringLength(50, MinimumLength =2)]
-        public string LastName { get; set; }
+        //[Required]
+        //[Display(Name = "Last Name")]
+        //[StringLength(50, MinimumLength =2)]
+        //public string LastName { get; set; }
 
-        [Required]
-        [Column("FirstName")]
-        [Display(Name = "First Name")]
-        [StringLength(50)]
-        public string FirstMidName { get; set; }
+        //[Required]
+        //[Column("FirstName")]
+        //[Display(Name = "First Name")]
+        //[StringLength(50)]
+        //public string FirstMidName { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Hire Date")]
         public DateTime HireDate { get; set; }
 
-        public string FullName { get { return FirstMidName + LastName; } }
+        //public string FullName { get { return FirstMidName + LastName; } }
 
         public ICollection<CourseAssignment> CourseAssignments { get; set; }
         public OfficeAssignment OfficeAssignment { get; set; }
